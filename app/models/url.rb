@@ -1,4 +1,5 @@
 class Url < ActiveRecord::Base
+  belongs_to :account, optional: true
   has_many :clicks
 
   validates :original_url, presence: true
