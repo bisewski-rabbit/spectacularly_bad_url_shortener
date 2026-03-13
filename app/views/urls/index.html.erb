@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>URL Shortener</title>
+</head>
+<body>
+  <h1>URL Shortener</h1>
+
+  <% @urls.each do |url| %>
+    <div>
+      <a href="/<%= url.short_code %>"><%= url.original_url %></a>
+      - Clicks: <%= url.click_count %>
+    </div>
+  <% end %>
+
+  <form action="/urls" method="post">
+    <input type="text" name="original_url" placeholder="Enter URL">
+    <button type="submit">Shorten</button>
+  </form>
+</body>
+</html>
